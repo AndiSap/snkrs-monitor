@@ -1,0 +1,11 @@
+{
+  "extends": "./tsconfig.common",
+  "compilerOptions": {
+    "forceConsistentCasingInFileNames": false,
+    "newLine": "LF",
+    "noFallthroughCasesInSwitch": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "strict": true
+  }
+}

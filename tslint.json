@@ -1,0 +1,32 @@
+{
+  "extends": [
+    "tslint-config-airbnb",
+    "tslint-config-prettier"
+  ],
+  "rulesDirectory": ["tslint-plugin-prettier"],
+  "rules": {
+    "no-any": false,
+    "prettier": true,
+    "completed-docs": [
+      true,
+      "classes",
+      "enums",
+      "interfaces",
+      "namespaces",
+      "types",
+      {
+        "functions": {"visibilities": ["exported"]},
+        "methods": { "privacies": ["public", "protected"],
+        "properties": { "privacies": ["public", "protected"] },
+        "variables": {"visibilities": ["exported"]}
+      }
+    }],
+    "jsdoc-format": true,
+    "only-arrow-functions": true,
+    "object-literal-sort-keys": false,
+    "max-line-length": {
+      "options": { "limit": 160 },
+      "severity": "none"
+     }
+  }
+}

@@ -1,0 +1,46 @@
+{
+  "name": "snkrs-monitor",
+  "version": "0.0.1",
+  "description": "Monitor to capture new releases and drops on snkrs app",
+  "main": "index.js",
+  "scripts": {
+    "build": "npm run gen:tsc:strict",
+    "gen:tsc:strict": "tsc -p tsconfig.json",
+    "start": "node javascript/nodeServer.js",
+    "test": "npm run gen:tsc:strict && jest --config=jest.json",
+    "lint": "tslint -c tslint.json -p tsconfig.json",
+    "lint:fix": "npm run lint -- --fix"
+  },
+  "keywords": [],
+  "author": "Andreas Saplacan",
+  "license": "UNLICENSED",
+  "devDependencies": {
+    "body-parser": "^1.18.3",
+    "csvtojson": "^2.0.6",
+    "express": "^4.16.3",
+    "https": "^1.0.0",
+    "jest": "^23.4.1",
+    "jest-junit": "^5.1.0",
+    "multer": "^1.3.1",
+    "prettier": "^1.13.7",
+    "prettyjson": "^1.2.1",
+    "ts-jest": "^23.0.1",
+    "tslint": "^5.11.0",
+    "tslint-config-airbnb": "^5.9.2",
+    "tslint-config-prettier": "^1.14.0",
+    "tslint-plugin-prettier": "^1.3.0",
+    "twilio": "^3.19.2",
+    "typescript": "^2.9.2"
+  },
+  "dependencies": {
+    "@types/chalk": "^2.2.0",
+    "@types/express": "^4.16.0",
+    "@types/jest": "^23.3.0",
+    "@types/multer": "^1.3.7",
+    "@types/node": "^10.5.2",
+    "@types/prettyjson": "0.0.28",
+    "@types/twilio": "0.0.9",
+    "chalk": "^2.4.1",
+    "request-promise-native": "^1.0.5"
+  }
+}

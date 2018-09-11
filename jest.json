@@ -1,0 +1,19 @@
+{
+    "verbose": true,
+    "collectCoverage": true,
+    "setupFiles": [
+      "reflect-metadata"
+    ],
+    "collectCoverageFrom": [
+        "src/**/*.{ts}",
+        "!src/*",
+        "!src/Config/*"
+    ],
+    "coverageReporters": ["cobertura", "lcov", "text"],
+    "transform": {
+        "^.+\\.ts$": "ts-jest"
+    },
+    "testRegex": "/src/.+\\.test.ts$",
+    "moduleFileExtensions": ["ts", "js", "json", "node"],
+    "reporters" : ["default", "jest-junit"]
+}
