@@ -37,6 +37,7 @@ export class SnkrsMonitor {
         if (!this.isRestart) {
           this.twilio.sendMessage("Andi", this.prepareMessage(this.mostRecent));
           this.twilio.sendMessage("Louie", this.prepareMessage(this.mostRecent));
+          this.twilio.sendMessage("DaeShawn", this.prepareMessage(this.mostRecent));
           // this.twilio.sendMessage("Andi", this.prepareMessage(this.mostRecent), this.getCardImageUrl(this.mostRecent)); // send mms
         } else {
           console.log("No message send because monitor restarted");
@@ -68,8 +69,6 @@ export class SnkrsMonitor {
       console.log(` - image: ${this.getCardImageUrl(this.mostRecent)}`);
       console.log(` - tags: ${this.getTags(this.mostRecent)}`);
       console.log(` - publish date: ${this.getPublishDate(this.mostRecent)}`);
-      console.log(` - sell date: ${this.getSellDate(this.mostRecent)}`);
-      console.log(` - sell status: ${this.getSellStatus(this.mostRecent)}`);
       this.lastRecent = this.mostRecent;
       return true;
     }
