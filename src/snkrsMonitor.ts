@@ -70,8 +70,6 @@ export class SnkrsMonitor {
       console.log(` - image: ${this.getCardImageUrl(this.mostRecent)}`);
       console.log(` - tags: ${this.getTags(this.mostRecent)}`);
       console.log(` - publish date: ${this.getPublishDate(this.mostRecent)}`);
-      console.log(` - sell date: ${this.getSellDate(this.mostRecent)}`);
-      console.log(` - sell status: ${this.getSellStatus(this.mostRecent)}`);
       this.lastRecent = this.mostRecent;
       return true;
     }
