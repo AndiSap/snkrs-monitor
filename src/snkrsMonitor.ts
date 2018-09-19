@@ -19,6 +19,7 @@ export class SnkrsMonitor {
     this.twilio = new Twilio();
     this.twilio.setupAccount();
     this.twilio.setupAccount("Louie", "AC060ee892c3bc251ee2af102575190999", "d4233fb72c2985c7f145d9338580b66b", "+13129532490", "+12242617405");
+    this.twilio.setupAccount("DaeShawn", "ACa4b1d7098f41b63f93b687cada76cf21", "09de4c43f0b40e42fb455c025293b441", "+13122414233", "+12199615053");
     this.isRestart = true;
   }
 
