@@ -70,6 +70,8 @@ export class SnkrsMonitor {
       console.log(` - image: ${this.getCardImageUrl(this.mostRecent)}`);
       console.log(` - tags: ${this.getTags(this.mostRecent)}`);
       console.log(` - publish date: ${this.getPublishDate(this.mostRecent)}`);
+      console.log(` - sell date: ${this.getSellDate(this.mostRecent)}`);
+      console.log(` - sell status date: ${this.getSellStatus(this.mostRecent)}`);
       this.lastRecent = this.mostRecent;
       return true;
     }
@@ -77,7 +79,7 @@ export class SnkrsMonitor {
   }
 
   private prepareMessage(data: Thread): string {
-    return `Most recent card: ${this.getShoeName(data)} ${this.getUrl(data)}`;
+    return `Most recent card: ${this.getShoeName(data)} \nSell status" ${this.getSellStatus(data)} ${this.getUrl(data)}`;
   }
 
   // private openNewShoe(data: Thread): string {
