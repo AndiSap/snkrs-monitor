@@ -19,6 +19,7 @@ export class SnkrsMonitor {
     this.twilio = new Twilio();
     this.twilio.setupAccount();
     this.twilio.setupAccount("Louie", "AC060ee892c3bc251ee2af102575190999", "d4233fb72c2985c7f145d9338580b66b", "+13129532490", "+12242617405");
+    this.twilio.setupAccount("DaeShawn", "ACa4b1d7098f41b63f93b687cada76cf21", "09de4c43f0b40e42fb455c025293b441", "+13122414233", "+12199615053");
     this.isRestart = true;
   }
 
@@ -36,8 +37,10 @@ export class SnkrsMonitor {
         if (!this.isRestart) {
           this.twilio.sendMessage("Andi", this.prepareMessage(this.mostRecent));
           this.twilio.sendMessage("Louie", this.prepareMessage(this.mostRecent));
+          this.twilio.sendMessage("DaeShawn", this.prepareMessage(this.mostRecent));
           // this.twilio.sendMessage("Andi", this.prepareMessage(this.mostRecent), this.getCardImageUrl(this.mostRecent)); // send mms
         } else {
+          this.twilio.sendMessage("Andi", this.prepareMessage(this.mostRecent));
           console.log("No message send because monitor restarted");
           this.isRestart = false;
         }
@@ -76,7 +79,7 @@ export class SnkrsMonitor {
   }
 
   private prepareMessage(data: Thread): string {
-    return `Most recent card: ${this.getShoeName(data)} \nStatus Button: ${this.getSellStatus(data)} ${this.getUrl(data)}`;
+    return `Most recent card: ${this.getShoeName(data)} ${this.getUrl(data)}`;
   }
 
   // private openNewShoe(data: Thread): string {
@@ -116,6 +119,7 @@ export class SnkrsMonitor {
   }
 
   private getSellDate(data: Thread): string {
+    if (data.product.startSellDate === undefined) return "undefined";
     const string = data.product.startSellDate.toString().split("T");
     const date = string[0];
     const time = string[1].split(".")[0];
@@ -124,6 +128,7 @@ export class SnkrsMonitor {
 
   private getSellStatus(data: Thread): string {
     const status = data.cards.find(card => card.iOSOnly) as Cards;
+    if (status === undefined) return "undefined";
     return status.cta.text;
   }
 
