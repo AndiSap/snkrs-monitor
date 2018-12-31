@@ -23,6 +23,7 @@ export class Request {
 
   /**
    * send request to nike api
+   * @returns list of recent shoe cards
    */
   public async sendRequest(): Promise<Response> {
     try {

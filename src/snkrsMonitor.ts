@@ -17,9 +17,7 @@ export class SnkrsMonitor {
   constructor() {
     this.nikeRequest = new Request();
     this.twilio = new Twilio();
-    this.twilio.setupAccount();
-    this.twilio.setupAccount("Louie", "AC060ee892c3bc251ee2af102575190999", "d4233fb72c2985c7f145d9338580b66b", "+13129532490", "+12242617405");
-    this.twilio.setupAccount("DaeShawn", "ACa4b1d7098f41b63f93b687cada76cf21", "09de4c43f0b40e42fb455c025293b441", "+13122414233", "+12199615053");
+    this.twilio.setupAccount("Louie", "newAccountSid", "newAuthToken", "+1234567890", "+19876543210"); // edit your account info here
     this.isRestart = true;
   }
 
@@ -35,12 +33,13 @@ export class SnkrsMonitor {
           return;
         }
         if (!this.isRestart) {
+          /**
+           * @todo send message to all registered accounts
+           */
           this.twilio.sendMessage("Andi", this.prepareMessage(this.mostRecent));
           this.twilio.sendMessage("Louie", this.prepareMessage(this.mostRecent));
-          this.twilio.sendMessage("DaeShawn", this.prepareMessage(this.mostRecent));
           // this.twilio.sendMessage("Andi", this.prepareMessage(this.mostRecent), this.getCardImageUrl(this.mostRecent)); // send mms
         } else {
-          this.twilio.sendMessage("Andi", this.prepareMessage(this.mostRecent));
           console.log("No message send because monitor restarted");
           this.isRestart = false;
         }

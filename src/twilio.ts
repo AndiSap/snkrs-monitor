@@ -5,10 +5,10 @@ import * as chalk from "chalk";
  * setup and send a message via twilio
  */
 export class Twilio {
-  private defaultAccountSid = "ACd805595bc3d41ac6739ec43f242efa8b"; // Your Account SID from www.twilio.com/console
-  private defaultAuthToken = "73349a0f57bcddb36588259fb08b75c6"; // Your Auth Token from www.twilio.com/console
-  private defaultPhoneNumber = "+17024189253";
-  private defaultTwilioNumber = "+17029788766";
+  private defaultAccountSid = "defaultAccountSid"; // Your Account SID from www.twilio.com/console
+  private defaultAuthToken = "defaultAuthToken"; // Your Auth Token from www.twilio.com/console
+  private defaultPhoneNumber = "+12222222222";
+  private defaultTwilioNumber = "+13333333333";
   private accounts: Account[] = [];
 
   constructor() {}
